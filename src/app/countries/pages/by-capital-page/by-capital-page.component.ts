@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class ByCapitalPageComponent {
 
+  searchByCapital(termino: string): void {
+    console.log({termino});
+  }
 }
