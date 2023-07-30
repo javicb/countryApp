@@ -30,4 +30,14 @@ export class CountryService {
     );
   }
 
+  searchRegion(region: string): Observable<Country[]> {
+    return this.httpClient.get<Country[]>(`${this.url}/region/${region}`)
+    .pipe(
+      catchError(err => {
+        console.log('Error en el servicio', err.message);
+        return of([])
+      })
+    );
+  }
+
 }
