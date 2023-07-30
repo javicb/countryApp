@@ -20,4 +20,14 @@ export class CountryService {
     );
   }
 
+  searchCountry(country: string): Observable<Country[]> {
+    return this.httpClient.get<Country[]>(`${this.url}/name/${country}`)
+    .pipe(
+      catchError(err => {
+        console.log('Error en el servicio', err.message);
+        return of([])
+      })
+    );
+  }
+
 }
