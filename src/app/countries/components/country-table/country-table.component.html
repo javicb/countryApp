@@ -21,7 +21,7 @@
         <td>{{country.name.common}}</td>
         <td>{{country.capital}}</td>
         <td>{{country.population | number}}</td>
-        <th><a href="#">Ver mas...</a></th>
+        <th><a [routerLink]="['/countries/by/',country.cca3]">Ver mas...</a></th>
       </tr>
     </tbody>
   </table>
